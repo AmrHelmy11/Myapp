@@ -1,0 +1,5 @@
+pickle
+scikit-learn
+pandas
+streamlit
+KNeighborsRegressor

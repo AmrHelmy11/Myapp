@@ -1,14 +1,14 @@
 import streamlit as st
-import joblib
+import pickle
 import pandas as pd
-preprocessor=joblib.load("preprocessor.h5")
-pipeline=joblib.load("Car Price Prediction Model.h5")
-model=joblib.load("Model.h5")
-scaler=joblib.load("Scaler.h5")
-inputs=joblib.load("input.h5")
-Brands_List=joblib.load("Brands_List.h5")
-Models_List=joblib.load("Models_List.h5")
-Status_List=joblib.load("Status_List.h5")
+preprocessor=pickle.load(open("preprocessor.pkl","rb"))
+pipeline=pickle.load(open("https://github.com/AmrHelmy11/My_App/releases/download/cars/Car.Price.Prediction.Model.pkl","rb"))
+model=pickle.load(open("Model.pkl","rb"))
+scaler=pickle.load(open("Scaler.pkl","rb"))
+inputs=pickle.load(open("input.pkl","rb"))
+Brands_List=pickle.load(open("Brands_List.pkl","rb"))
+Models_List=pickle.load(open("Models_List.pkl","rb"))
+Status_List=pickle.load(open("Status_List.pkl","rb"))
 
 def predict(Brand,Model,Status,Year,Mileage):
     test_df=pd.DataFrame(columns=inputs)

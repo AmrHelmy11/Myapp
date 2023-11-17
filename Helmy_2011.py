@@ -2,7 +2,7 @@ import streamlit as st
 import pickle
 import pandas as pd
 preprocessor=pickle.load("preprocessor.pkl")
-pipeline=pickle.load("https://github.com/AmrHelmy11/My_App/releases/download/cars/Car.Price.Prediction.Model.pkl")
+pipeline=pickle.load("Car.Price.Prediction.Model.pkl")
 model=pickle.load("Model.pkl")
 scaler=pickle.load("Scaler.pkl")
 inputs=pickle.load("input.pkl")

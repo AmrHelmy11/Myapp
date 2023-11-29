@@ -1,14 +1,15 @@
 import streamlit as st
 import pickle
 import pandas as pd
+from sklearn.pipeline import Pipeline
 preprocessor=pickle.load("preprocessor.pkl")
-pipeline=pickle.load("Car Price Prediction Model.pkl")
 model=pickle.load("Model.pkl")
 scaler=pickle.load("Scaler.pkl")
 inputs=pickle.load("input.pkl")
 Brands_List=pickle.load("Brands_List.pkl")
 Models_List=pickle.load("Models_List.pkl")
 Status_List=pickle.load("Status_List.pkl")
+pipeline=Pipeline([("StandardScaler",scaler),("KNN",model)])
 
 def predict(Brand,Model,Status,Year,Mileage):
     test_df=pd.DataFrame(columns=inputs)
